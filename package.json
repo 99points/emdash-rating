@@ -1,0 +1,39 @@
+{
+  "name": "emdash-rating",
+  "version": "1.0.0",
+  "description": "Star rating plugin for EmDash CMS — let visitors rate posts with 1–5 stars, view live averages, and manage all votes from a built-in admin dashboard.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "emdash-source": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./sandbox": {
+      "emdash-source": "./src/sandbox-entry.ts",
+      "default": "./dist/sandbox-entry.js"
+    }
+  },
+  "files": [
+    "src",
+    "dist",
+    "icon.png",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "esbuild src/index.ts src/sandbox-entry.ts --bundle=false --format=esm --platform=neutral --outdir=dist"
+  },
+  "keywords": [
+    "emdash",
+    "emdash-plugin",
+    "star-rating",
+    "ratings",
+    "cms"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "emdash": "^0.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.0"
+  }
+}
